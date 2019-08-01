@@ -1,7 +1,7 @@
 import "./styles.css";
 import * as React from "react";
 import { render } from "react-dom";
-import { BrowserRouter as Router, NavLink } from "react-router-dom";
+import { HashRouter as Router, NavLink } from "react-router-dom";
 import { Switch, Route } from "react-router";
 import Editor from "./editor/Editor";
 import { setupIoC } from "./SetupIoC";

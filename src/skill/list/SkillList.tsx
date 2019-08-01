@@ -46,7 +46,7 @@ export const searchSkill = (skill: ISkill, filter: string) =>
 export const deepSearchSkill = (skill: ISkill, filter: string) =>
   JSON.stringify(skill || {})
     .toLocaleLowerCase()
-    .indexOf(filter) >= 0;
+    .indexOf(filter.toLocaleLowerCase()) >= 0;
 
 export function SkillList({ match, history }: RouteComponentProps) {
   const [skillList, setSkillList] = useState(getSkillList());

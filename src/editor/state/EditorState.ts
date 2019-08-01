@@ -56,7 +56,7 @@ export const getFileFromMap = (id: string): IServerFile | undefined => {
 
 export const getFileContent = (fileContentId: string) =>
   new Promise<IServerFile>((resolve, reject) => {
-    fetch(`/serverData/content/${fileContentId}.json`)
+    fetch(`serverData/content/${fileContentId}.json`)
       .then(response => response.json())
       .then(result => {
         // TODO: Cache content
