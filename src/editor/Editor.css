@@ -1,0 +1,24 @@
+.editor-main {
+  grid-area: main;
+}
+.editor-sidebar {
+  grid-area: sidebar;
+}
+.editor {
+  display: grid;
+
+  /*  Define the size and number of columns in our grid. 
+  The fr unit works similar to flex:
+  fr columns will share the free space in the row in proportion to their value.
+  We will have 2 columns - the first will be 3x the size of the second.  */
+  grid-template-columns: 1fr 3fr;
+
+  /*  Assign the grid areas we did earlier to specific places on the grid. 
+      First row is all header.
+      Second row is shared between main and sidebar.
+      Last row is all footer.  */
+  grid-template-areas: "sidebar main";
+
+  /*  The gutters between each grid cell will be 60 pixels. */
+  grid-gap: 60px;
+}

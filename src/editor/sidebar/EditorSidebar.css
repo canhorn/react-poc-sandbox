@@ -1,0 +1,8 @@
+.editor-sidebar .menu-link {
+  color: inherit;
+  text-decoration: none;
+}
+.editor-sidebar .menu-link.active {
+  color: blue;
+  text-decoration: none;
+}
