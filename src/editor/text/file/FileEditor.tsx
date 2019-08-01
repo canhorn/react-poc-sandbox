@@ -31,7 +31,7 @@ class FileEditor extends React.Component<IFileEditorProps, IFileEditorState> {
       selectOnLineNumbers: true
     }
   };
-  private _onChangeHandler: string;
+  private _onChangeHandler!: string;
   async componentDidMount() {
     this._onChangeHandler = listenForMainContentChange(
       this.onContentChanged,
@@ -43,6 +43,9 @@ class FileEditor extends React.Component<IFileEditorProps, IFileEditorState> {
   }
   private onContentChanged() {
     try {
+      if(!this.props.match) {
+        return;
+      }
       this.setState({
         fileId: this.props.match.params.fileId,
         file: DEFAULT_FILE
@@ -58,7 +61,7 @@ class FileEditor extends React.Component<IFileEditorProps, IFileEditorState> {
       console.error("Error", ex);
     }
   }
-  editorDidMount = (getCurrentValue, editor) => {
+  editorDidMount = (getCurrentValue: () => string, editor: any) => {
     console.log("editorDidMount", { getCurrentValue, editor });
     // editor.focus();
     // TODO: Wire to onChange to make sure state is updated
@@ -71,7 +74,7 @@ class FileEditor extends React.Component<IFileEditorProps, IFileEditorState> {
       );
     }
   };
-  onChange = (newValue, e) => {
+  onChange = (newValue: string, e:any) => {
     console.log(this.state.fileId);
     if (this.state.fileId === "not-valid") {
       return;
@@ -80,6 +83,9 @@ class FileEditor extends React.Component<IFileEditorProps, IFileEditorState> {
     setFileContent(this.state.fileId, newValue);
   };
   componentDidUpdate(prevProps: IFileEditorProps) {
+    if(!prevProps.match || !this.props.match) {
+      return;
+    }
     if (prevProps.match.params.fileId !== this.props.match.params.fileId) {
       this.setState({
         fileId: this.props.match.params.fileId,
@@ -87,6 +93,9 @@ class FileEditor extends React.Component<IFileEditorProps, IFileEditorState> {
       });
       getFile(this.props.match.params.fileId)
         .then(file => {
+          if(!this.props.match) {
+            return;
+          }
           this.setState({
             fileId: this.props.match.params.fileId,
             file
@@ -98,9 +107,13 @@ class FileEditor extends React.Component<IFileEditorProps, IFileEditorState> {
 
   render() {
     const { file } = this.state;
+    let fileId = "invalid"
+    if(this.props.match) {
+      fileId = this.props.match.params.fileId
+    }
     return (
       <div className="text-editor">
-        <div>({this.props.match.params.fileId})</div>
+        <div>({fileId})</div>
         <Editor
           key="something"
           width="100%"

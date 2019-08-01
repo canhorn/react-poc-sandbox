@@ -15,7 +15,7 @@ export default function SkillEditor({
       <Text nowrap block onContextMenu={() => alert("open context")}>
         {match.params.skillId}
       </Text>
-      <pre>{JSON.stringify(skill, null, 4)}</pre>
+        <pre>{JSON.stringify(skill, null, 4)}</pre>
     </>
   );
 }

@@ -43,13 +43,14 @@ export const setFileContent = (id: string, content: string): void => {
 };
 
 export const getFile = async (id: string): Promise<IServerFile> => {
-  if (!STATE.serverFileMap.has(id)) {
+  const file = STATE.serverFileMap.get(id);
+  if (!file) {
     // Request file content
     return getFileContent(id);
   }
-  return STATE.serverFileMap.get(id);
+  return file;
 };
-export const getFileFromMap = (id: string): IServerFile => {
+export const getFileFromMap = (id: string): IServerFile | undefined => {
   return STATE.serverFileMap.get(id);
 };
 
