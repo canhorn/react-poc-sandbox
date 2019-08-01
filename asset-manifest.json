@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/react-poc-sandbox/static/css/main.d96c2583.chunk.css",
+    "main.js": "/react-poc-sandbox/static/js/main.f88a7dd6.chunk.js",
+    "main.js.map": "/react-poc-sandbox/static/js/main.f88a7dd6.chunk.js.map",
+    "runtime~main.js": "/react-poc-sandbox/static/js/runtime~main.bcfccd37.js",
+    "runtime~main.js.map": "/react-poc-sandbox/static/js/runtime~main.bcfccd37.js.map",
+    "static/js/2.42f6eeba.chunk.js": "/react-poc-sandbox/static/js/2.42f6eeba.chunk.js",
+    "static/js/2.42f6eeba.chunk.js.map": "/react-poc-sandbox/static/js/2.42f6eeba.chunk.js.map",
+    "index.html": "/react-poc-sandbox/index.html",
+    "precache-manifest.5ee1f61c6829c89a86c33c224a040d5d.js": "/react-poc-sandbox/precache-manifest.5ee1f61c6829c89a86c33c224a040d5d.js",
+    "service-worker.js": "/react-poc-sandbox/service-worker.js",
+    "static/css/main.d96c2583.chunk.css.map": "/react-poc-sandbox/static/css/main.d96c2583.chunk.css.map"
+  }
+}

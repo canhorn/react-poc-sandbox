@@ -1,0 +1,87 @@
+{
+  "fileMenu": {
+    "root": [
+      {
+        "id": "Scripts",
+        "name": "Scripts",
+        "path": ["Scripts"],
+        "isFolder": true,
+        "children": [
+          {
+            "id": "Scripts_Actions",
+            "name": "Actions",
+            "path": ["Scripts", "Actions"],
+            "isFolder": true,
+            "children": [
+              {
+                "id": "Scripts_Actions_MoveToPlayer.js",
+                "name": "MoveToPlayer.js",
+                "path": ["Scripts", "Actions"],
+                "isFolder": false,
+                "children": []
+              },
+              {
+                "id": "Scripts_Actions_FindNextTarget.js",
+                "name": "FindNextTarget.js",
+                "path": ["Scripts", "Actions"],
+                "isFolder": false,
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Server",
+        "name": "Server",
+        "path": ["Server"],
+        "isFolder": true,
+        "children": [
+          {
+            "id": "Server_Behaviors",
+            "name": "Behaviors",
+            "path": ["Server", "Behaviors"],
+            "isFolder": true,
+            "children": [
+              {
+                "id": "Server_Behaviors_Wander.json",
+                "name": "Wander.json",
+                "path": ["Server", "Behaviors"],
+                "isFolder": false,
+                "children": []
+              },
+              {
+                "id": "Server_Behaviors_FollowPlayer.json",
+                "name": "FollowPlayer.json",
+                "path": ["Server", "Behaviors"],
+                "isFolder": false
+              }
+            ]
+          },
+          {
+            "id": "Server_Scripts",
+            "name": "Scripts",
+            "path": ["Server", "Scripts"],
+            "isFolder": true,
+            "children": [
+              {
+                "id": "Server_Scripts_MoveToPlayer.csx",
+                "name": "MoveToPlayer.csx",
+                "path": ["Server", "Scripts"],
+                "isFolder": false,
+                "children": []
+              },
+              {
+                "id": "Server_Scripts_FindNextTarget.csx",
+                "name": "FindNextTarget.csx",
+                "path": ["Server", "Scripts"],
+                "isFolder": false,
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
