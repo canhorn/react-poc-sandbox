@@ -96,7 +96,7 @@ function fillEventServiceWithRandomListeners(
   eventService: IEventService
 ) {
   for (let index = 0; index < createCount; index++) {
-    eventService.addEventListener(
+    eventService.on(
       { key: "listener_event_" + index },
       () => {},
       eventService
