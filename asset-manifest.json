@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/react-poc-sandbox/static/css/main.03ca03b2.chunk.css",
-    "main.js": "/react-poc-sandbox/static/js/main.7a283a0c.chunk.js",
-    "main.js.map": "/react-poc-sandbox/static/js/main.7a283a0c.chunk.js.map",
+    "main.js": "/react-poc-sandbox/static/js/main.a7137e91.chunk.js",
+    "main.js.map": "/react-poc-sandbox/static/js/main.a7137e91.chunk.js.map",
     "runtime~main.js": "/react-poc-sandbox/static/js/runtime~main.bcfccd37.js",
     "runtime~main.js.map": "/react-poc-sandbox/static/js/runtime~main.bcfccd37.js.map",
-    "static/js/2.267d8a03.chunk.js": "/react-poc-sandbox/static/js/2.267d8a03.chunk.js",
-    "static/js/2.267d8a03.chunk.js.map": "/react-poc-sandbox/static/js/2.267d8a03.chunk.js.map",
+    "static/js/2.ab88b8b8.chunk.js": "/react-poc-sandbox/static/js/2.ab88b8b8.chunk.js",
+    "static/js/2.ab88b8b8.chunk.js.map": "/react-poc-sandbox/static/js/2.ab88b8b8.chunk.js.map",
     "index.html": "/react-poc-sandbox/index.html",
-    "precache-manifest.38623f9228f65b9365428db6c8678842.js": "/react-poc-sandbox/precache-manifest.38623f9228f65b9365428db6c8678842.js",
+    "precache-manifest.99a25f52b89d21ae12b68d812254ed1f.js": "/react-poc-sandbox/precache-manifest.99a25f52b89d21ae12b68d812254ed1f.js",
     "service-worker.js": "/react-poc-sandbox/service-worker.js",
     "static/css/main.03ca03b2.chunk.css.map": "/react-poc-sandbox/static/css/main.03ca03b2.chunk.css.map"
   }
