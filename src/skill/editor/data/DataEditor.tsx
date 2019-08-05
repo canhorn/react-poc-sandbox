@@ -19,9 +19,6 @@ interface IDataItem {
 export default function DataEditor({ data, onChange: onParentChange }: IProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [dataItems, setDataItems] = useState<IDataItem[]>([]);
-    const [resolveList, setResolveList] = useState<List<IDataItem> | undefined>(
-        undefined
-    );
     useEffect(() => {
         if (!data) {
             return;

@@ -1,10 +1,5 @@
-import {
-    IStackItemStyles,
-    IStackStyles,
-    IStackTokens,
-    Stack,
-} from 'office-ui-fabric-react';
-import { ITextStyles, Text } from 'office-ui-fabric-react/lib/Text';
+import { Stack } from 'office-ui-fabric-react';
+import { Text } from 'office-ui-fabric-react/lib/Text';
 import { TextField } from 'office-ui-fabric-react/lib/TextField';
 import React, { useEffect, useState } from 'react';
 import { RouteComponentProps } from 'react-router';
@@ -21,29 +16,6 @@ import SkillEffectMappingEdit from './effect/SkillEffectMappingEdit';
 import { useSkillEffectChanged } from './UseSkillEffectChanged';
 import { useSkillEffectListState } from './UseSkillEffectListState';
 import { useSkillEffectSelected } from './UseSkillEffectSelected';
-
-// Styles definition
-const stackStyles: IStackStyles = {
-    root: {},
-};
-const stackItemStyles: IStackItemStyles = {
-    root: {
-        fontWeight: 'bold',
-        display: 'flex',
-        minHeight: '15em',
-        width: '50%',
-        padding: '1em',
-    },
-};
-const headerStyles: ITextStyles = {
-    root: {
-        fontWeight: 'bold',
-    },
-};
-const stackTokens: IStackTokens = {
-    childrenGap: 5,
-    padding: '1em',
-};
 
 export default function SkillEditor({
     match,
@@ -79,7 +51,7 @@ export default function SkillEditor({
                 );
             };
         }
-    }, [skill]);
+    }, [skill, match.params.skillId, reset]);
 
     const { onSkillEffectChanged } = useSkillEffectChanged(
         skill,

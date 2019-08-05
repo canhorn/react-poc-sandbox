@@ -6,7 +6,7 @@ import {
     SelectionMode,
 } from 'office-ui-fabric-react/lib/DetailsList';
 import { TextField } from 'office-ui-fabric-react/lib/TextField';
-import React, { createRef, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ISkillEffect } from '../../api/ISkill';
 import TutorialBubble from '../../tutorial/TutorialBubble';
 

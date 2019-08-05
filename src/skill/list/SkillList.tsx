@@ -8,7 +8,6 @@ import {
     IDetailsRowStyles,
     SelectionMode,
 } from 'office-ui-fabric-react/lib/DetailsList';
-import { Text } from 'office-ui-fabric-react/lib/Text';
 import { TextField } from 'office-ui-fabric-react/lib/TextField';
 import React, { useEffect, useState } from 'react';
 import { RouteComponentProps } from 'react-router';
@@ -93,8 +92,6 @@ export function SkillList({ match, history }: RouteComponentProps) {
         const fieldContent = item[column.fieldName as keyof ISkill];
 
         if (item.$$pendingSave && column.fieldName === 'id') {
-            const hostId: string = getId('skill-list-pending-save-tooltip');
-
             return <>* {fieldContent}</>;
         }
         return <>{fieldContent}</>;
