@@ -1,30 +1,33 @@
-export interface ISkill {
-  id: string;
-  name: string;
-  description: string;
-  type: string | "ACTIVE";
-  target: string | "ENTITY";
-  validatorList: ISkillValidator[];
-  effectList: ISkillEffect[];
-  failedList?: ISkillEffect[];
+export interface ISkill extends ISkillEffectBase {
+    $$pendingSave?: boolean;
+    id: string;
+    name: string;
+    description: string;
+    type: string | 'ACTIVE';
+    target: string | 'ENTITY';
 }
 
 export interface ISkillValidator {
-  comment?: string;
-  validator: string;
-  data?: GeneralSkillData;
+    validator: string;
+    comment?: string;
+    data?: GeneralSkillData;
 }
 
-export interface ISkillEffect {
-  comment?: string;
-  effect: string;
-  data?: GeneralSkillData;
-  effectList?: ISkillEffect[];
-  failedList?: ISkillEffect[];
+export interface ISkillEffect extends ISkillEffectBase {
+    effect: string;
+    comment?: string;
+    duration?: number;
+    data?: GeneralSkillData;
+}
+
+export interface ISkillEffectBase {
+    validatorList?: ISkillValidator[];
+    next?: ISkillEffect[];
+    failedList?: ISkillEffect[];
 }
 
 export type GeneralSkillData = {
-  [key: string]: any;
+    [key: string]: any;
 };
 
 /**

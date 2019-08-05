@@ -1,0 +1,38 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "compounds": [
+        {
+            "name": "Start",
+            "configurations": [
+                "Launch via YARN",
+                "Debug with Chrome"
+            ]
+        }
+    ],
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch via YARN",
+            "runtimeExecutable": "yarn",
+            "runtimeArgs": [
+                "start"
+            ],
+            "env": {
+                "BROWSER": "none"
+            },
+            "port": 3000,
+            "timeout": 1000000000
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Debug with Chrome",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}

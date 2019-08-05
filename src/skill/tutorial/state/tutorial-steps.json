@@ -1,0 +1,9 @@
+{
+    "tutorialActive": true,
+    "steps": [{
+        "key": "step_1",
+        "isVisible": true,
+        "directionalHint": 1,
+        "text": "Double-click to open editor."
+    }]
+}

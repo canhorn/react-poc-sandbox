@@ -5,7 +5,6 @@ import { ILoggerFactory } from "./core/logger";
 import { StandardLoggerFactory } from "./core/logger/factory/StandardLoggerFactory";
 
 export const setupIoC = () => {
-  console.log("setup ioc");
   // Setup Event Services
   createSingletonService(IEventService, StandardEventService);
   // Setup logger
