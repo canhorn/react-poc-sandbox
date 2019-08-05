@@ -1,10 +1,10 @@
+import { TextField } from 'office-ui-fabric-react';
 import { DefaultButton } from 'office-ui-fabric-react/lib/Button';
 import { CommandBar } from 'office-ui-fabric-react/lib/CommandBar';
-import { Modal } from 'office-ui-fabric-react/lib/Modal';
-import React, { useState, useEffect } from 'react';
-import './DataEditor.css';
 import { List } from 'office-ui-fabric-react/lib/List';
-import { TextField } from 'office-ui-fabric-react';
+import { Modal } from 'office-ui-fabric-react/lib/Modal';
+import React, { useEffect, useState } from 'react';
+import './DataEditor.css';
 
 interface IProps {
     data?: any;
@@ -44,7 +44,7 @@ export default function DataEditor({ data, onChange: onParentChange }: IProps) {
         {
             key: 'newItem',
             name: 'New',
-            cacheKey: 'myCacheKey', // changing this key will invalidate this items cache
+            cacheKey: 'new-data-element',
             iconProps: {
                 iconName: 'Add',
             },
@@ -57,7 +57,7 @@ export default function DataEditor({ data, onChange: onParentChange }: IProps) {
                     },
                     {
                         key: 'stringDataItem',
-                        name: 'Calendar event',
+                        name: 'String',
                     },
                     {
                         key: 'boolDataItem',

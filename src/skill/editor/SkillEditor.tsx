@@ -10,7 +10,7 @@ import React, { useEffect, useState } from 'react';
 import { RouteComponentProps } from 'react-router';
 import { IEventService } from '../../core/event';
 import { Inject } from '../../core/ioc';
-import { ISkill, ISkillEffect, ISkillEffectBase } from '../api/ISkill';
+import { ISkill, ISkillEffectBase } from '../api/ISkill';
 import {
     SkillChangedEventData,
     SKILL_CHANGED_EVENT,
@@ -18,6 +18,7 @@ import {
 import { getSkill, updateSkill } from '../state/SkillEditorState';
 import SkillEffectEdit from './effect/SkillEffectEdit';
 import SkillEffectMappingEdit from './effect/SkillEffectMappingEdit';
+import { useSkillEffectChanged } from './UseSkillEffectChanged';
 import { useSkillEffectListState } from './UseSkillEffectListState';
 import { useSkillEffectSelected } from './UseSkillEffectSelected';
 
@@ -80,10 +81,13 @@ export default function SkillEditor({
         }
     }, [skill]);
 
-    const onSkillEffectChanged = createOnSkillEffectChanged(
+    const { onSkillEffectChanged } = useSkillEffectChanged(
         skill,
         selectedSkillEffectIndex,
-        selectedSkillFailedIndex
+        selectedSkillFailedIndex,
+        (skill: ISkillEffectBase) => {
+            updateSkill(skill as ISkill);
+        }
     );
 
     const {
@@ -148,25 +152,3 @@ export default function SkillEditor({
         </>
     );
 }
-
-const createOnSkillEffectChanged = (
-    skill: ISkill | undefined,
-    selectedSkillEffectIndex: number,
-    selectedSkillFailedIndex: number
-) => (effect: ISkillEffectBase) => {
-    if (!skill) {
-        return;
-    }
-    if (selectedSkillEffectIndex >= 0) {
-        if (!skill.next) {
-            skill.next = [];
-        }
-        skill.next[selectedSkillEffectIndex] = effect as ISkillEffect;
-    } else if (selectedSkillFailedIndex >= 0) {
-        if (!skill.failedList) {
-            skill.failedList = [];
-        }
-        skill.failedList[selectedSkillFailedIndex] = effect as ISkillEffect;
-    }
-    updateSkill(skill);
-};

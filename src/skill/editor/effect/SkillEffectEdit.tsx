@@ -1,22 +1,12 @@
-import {
-    IStackItemStyles,
-    IStackStyles,
-    IStackTokens,
-    DefaultButton,
-} from 'office-ui-fabric-react';
-import { ITextStyles } from 'office-ui-fabric-react/lib/Text';
-import React, { useEffect, useState } from 'react';
-import {
-    ISkillEffect,
-    ISkillValidator,
-    ISkill,
-    ISkillEffectBase,
-} from '../../api/ISkill';
-import SkillEffectMappingEdit from './SkillEffectMappingEdit';
+import { DefaultButton } from 'office-ui-fabric-react';
 import { TextField } from 'office-ui-fabric-react/lib/TextField';
-import { useSkillEffectSelected } from '../UseSkillEffectSelected';
-import { useSkillEffectListState } from '../UseSkillEffectListState';
+import React from 'react';
+import { ISkillEffect, ISkillEffectBase } from '../../api/ISkill';
 import DataEditor from '../data/DataEditor';
+import { useSkillEffectChanged } from '../UseSkillEffectChanged';
+import { useSkillEffectListState } from '../UseSkillEffectListState';
+import { useSkillEffectSelected } from '../UseSkillEffectSelected';
+import SkillEffectMappingEdit from './SkillEffectMappingEdit';
 
 interface IProps {
     effect: ISkillEffect;
@@ -34,6 +24,8 @@ export default function SkillEffectEdit({
     };
     const {
         selectedSkillEffect,
+        selectedSkillEffectIndex,
+        selectedSkillFailedIndex,
         onEffectSelect,
         onFailedSelect,
         onValidatorSelect,
@@ -60,12 +52,21 @@ export default function SkillEffectEdit({
         onChangeToParent(effect);
     };
 
+    const { onSkillEffectChanged } = useSkillEffectChanged(
+        effect,
+        selectedSkillEffectIndex,
+        selectedSkillFailedIndex,
+        (skill: ISkillEffectBase) => {
+            onChangeToParent(skill);
+        }
+    );
+
     return (
         <>
             {selectedSkillEffect ? (
                 <SkillEffectEdit
                     effect={selectedSkillEffect}
-                    onChange={() => console.log('Changed')}
+                    onChange={onSkillEffectChanged}
                     onBack={onBack}
                 />
             ) : (
